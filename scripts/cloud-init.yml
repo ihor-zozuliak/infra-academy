@@ -1,0 +1,10 @@
+#cloud-config
+version: v1
+packages_update: true
+packages_upgrade: true
+packages:
+  - apache2
+runcmd:
+  - systemctl start apache2
+  - sudo systemctl enable apache2
+  - echo "<h1>Hello, I'm webserver initiated with Cloud-Init</h1><p>VPC ID is ${vpc_id}</p></br><p>Created by Terraform</p>" > /var/www/html/index.html
