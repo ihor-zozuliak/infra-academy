@@ -1,5 +1,4 @@
 terraform {
-  required_version = "1.3.2"
   backend "s3" {
     bucket         = "remote-backend-s3-85687546754612322"
     key            = "infra/terraform.tfstate"
